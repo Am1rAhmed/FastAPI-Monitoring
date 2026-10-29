@@ -20,13 +20,13 @@ services:
     image: grafana/grafana:latest
     container_name: grafana
     environment:
-      - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=123456
+      - GF_SECURITY_ADMIN_USER=${GF_SECURITY_ADMIN_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GF_SECURITY_ADMIN_PASSWORD}
       - GF_SMTP_ENABLED=true
       - GF_SMTP_HOST=smtp.gmail.com:587
-      - GF_SMTP_USER=amirahmedmay2001@gmail.com
-      - GF_SMTP_PASSWORD=edeb ocoe pfac lleb
-      - GF_SMTP_FROM_ADDRESS=amirahmedmay2001@gmail.com
+      - GF_SMTP_USER=${GMAIL_ADDRESS}
+      - GF_SMTP_PASSWORD=${GMAIL_APP_PASSWORD}
+      - GF_SMTP_FROM_ADDRESS=${GMAIL_ADDRESS}
       - GF_SMTP_FROM_NAME=New Age FastAPI Monitoring
       - GF_SMTP_STARTTLS_POLICY=MandatoryStartTLS
     ports:
